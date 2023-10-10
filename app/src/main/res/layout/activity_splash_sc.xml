@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EF6C6C"
     tools:context=".SplashSc">
 
     <com.airbnb.lottie.LottieAnimationView
@@ -12,25 +13,40 @@
         app:lottie_autoPlay="true"
         app:lottie_rawRes="@raw/hearts"
         tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="-356dp">
+        tools:layout_editor_absoluteY="0dp">
 
     </com.airbnb.lottie.LottieAnimationView>
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="316dp"
         android:fontFamily="@font/anastasia"
         android:text="Frame"
         android:textSize="50dp"
-        android:textStyle="bold"
 
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintHorizontal_bias="0.413"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
     </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="316dp"
+        android:fontFamily="@font/anastasia"
+        android:text="Us"
+        android:textColor="@color/white"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"></TextView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
