@@ -4,7 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="30dp"
+    android:padding="40dp"
+
+
     android:background="#EF6C6C"
     >
 
@@ -26,11 +28,13 @@
         android:layout_height="wrap_content"
         android:layout_margin="1dp"
         app:cardElevation="5dp">
+
         <EditText
-            android:layout_width="match_parent"
             android:id="@+id/email"
-            android:hint="Email"
+            android:background="@color/white"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Email"
             android:padding="15dp"></EditText>
     </androidx.cardview.widget.CardView>
 
@@ -47,6 +51,7 @@
         <EditText
             android:layout_width="match_parent"
             android:hint="Password"
+            android:background="@color/white"
             android:id="@+id/password"
             android:inputType="numberPassword"
             android:layout_height="wrap_content"
@@ -60,7 +65,7 @@
         android:paddingLeft="3dp"
         android:paddingRight="1dp"
         android:text="New user?  Sign up"
-        android:textColor="@color/white"></TextView>
+        android:textColor="#2196F3"></TextView>
 
 
     <Button
@@ -69,4 +74,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Confirm"></Button>
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:lottie_rawRes="@raw/login"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:background="#EF6C6C">
+
+    </com.airbnb.lottie.LottieAnimationView>
 </LinearLayout>
