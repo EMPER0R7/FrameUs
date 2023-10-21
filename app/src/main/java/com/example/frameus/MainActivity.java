@@ -1,6 +1,8 @@
 package com.example.frameus;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,46 +32,35 @@ public class MainActivity extends AppCompatActivity {
         meonavigation();
 
 
-        binding.cam.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-             Intent i= new Intent(MainActivity.this,Camera.class);
-             startActivity(i);
-            }
-        });
+
+
     }
 
     private void meonavigation() {
         binding.bottomNavigation.setOnClickMenuListener(new Function1<MeowBottomNavigation.Model, Unit>() {
             @Override
             public Unit invoke(MeowBottomNavigation.Model model) {
+                FragmentTransaction transition= getSupportFragmentManager().beginTransaction();
                 switch (model.getId()){
                     case 1:
-                        binding.home.setVisibility(View.VISIBLE);
-                        binding.post.setVisibility(View.GONE);
-                        binding.profile.setVisibility(View.GONE);
-                        binding.search.setVisibility(View.GONE);
+                        transition.replace(R.id.container, new HomeFragment());
+
+
                         break;
                     case 2:
-                        binding.home.setVisibility(View.GONE);
-                        binding.post.setVisibility(View.VISIBLE);
-                        binding.profile.setVisibility(View.GONE);
-                        binding.search.setVisibility(View.GONE);
+                        transition.replace(R.id.container, new PostFragment());
+
                         break;
                     case 3:
-                        binding.home.setVisibility(View.GONE);
-                        binding.post.setVisibility(View.GONE);
-                        binding.profile.setVisibility(View.GONE);
-                        binding.search.setVisibility(View.VISIBLE);
+                        transition.replace(R.id.container, new SearchFragment());
+
                         break;
                     case 4:
-                        binding.home.setVisibility(View.GONE);
-                        binding.post.setVisibility(View.GONE);
-                        binding.profile.setVisibility(View.VISIBLE);
-                        binding.search.setVisibility(View.GONE);
+                        transition.replace(R.id.container, new ProfileFragment());
+
                         break;
                 }
-
+                transition.commit();
                 return null;
             }
         });
